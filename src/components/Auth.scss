@@ -1,0 +1,118 @@
+.Auth {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 40px;
+  right: -330px;
+  background-color: rgba(0, 0, 0, .6);
+  width: 350px;
+  transition: right 500ms;
+  padding-left: 30px;
+  height: 120px;
+
+  &--active, &:active, &:focus, &:hover {
+    right: 0;
+  }
+}
+
+.Auth__flag {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 100%;
+  width: 10px;
+  padding: 10px;
+  background-color: #F5E14B;
+  background-image: url(/images/key.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  word-break: break-all;
+}
+
+.Auth__content {
+  width: 100%;
+}
+
+.Auth__keystore {
+  margin-bottom: 5px;
+}
+
+.Auth__label {
+  display: block;
+  color: white;
+}
+
+.Auth__input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  height: 20px;
+}
+
+.Auth__passwordInput {
+  display: inline-block;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.Auth__button {
+  cursor: pointer;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px;
+  vertical-align: middle;
+  background-color: white;
+}
+
+.Auth__file {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.Auth__fileName {
+  display: inline-block;
+  width: calc(100% - 50px);
+  padding: 0 10px;
+  line-height: 20px;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.Auth__address {
+  display: block;
+  color: #00ff68;
+}
+
+.Auth__logout {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.Auth__keystoreMsg {
+  margin-top: 4px;
+  font-size: 8px;
+  color: white;
+}
+
+.Auth__toggleAccessButton {
+  margin-top: 4px;
+  cursor: pointer;
+  color: #cbff8e;
+  text-decoration: underline;
+  font-size: 12px;
+}

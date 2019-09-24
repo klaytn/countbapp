@@ -1,0 +1,72 @@
+.Count {
+  width: 400px;
+  margin: 50px auto;
+  padding: 50px 20px;
+  background-color: #78AEBD;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.Count__loading {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+}
+
+.Count__count {
+  border: 2px solid #484542;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.Count__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #494542;
+  transition: opacity 500ms;
+  color: white;
+  outline: 0;
+  position: relative;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    opacity: .2;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    &:hover { opacity: 1; }
+  }
+
+  &--setting {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(/images/loading.gif);
+    }
+  }
+}
+
+.Count__lastTransaction {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.Count__lastTransactionLink {
+  color: blue;
+  font-size: 10px;
+}

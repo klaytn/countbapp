@@ -1,0 +1,15 @@
+.BlockNumber {
+  position: fixed;
+  min-width: 240px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(black, .9);
+  opacity: .65;
+  padding: 6px;
+}
+
+.BlockNumber__current {
+  font-size: 16px;
+}
