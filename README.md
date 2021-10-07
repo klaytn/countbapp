@@ -27,7 +27,7 @@ Any user who has a Klaytn account can increase and decrease the current value as
 ### 3) npm package information
 > dependencies
 ```
-The countbapp project is optimized for caver-js version "1.1.2".
+The countbapp project is optimized for caver-js version "1.6.4".
 caver-js needs confirmation before updating.
 ```
 
