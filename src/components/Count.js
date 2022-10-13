@@ -56,31 +56,25 @@ class Count extends Component {
     //   from: '0x952A8dD075fdc0876d48fC26a389b53331C34585', // PUT YOUR ADDRESS
     //   gas: '200000',
     // })
-    this.countContract.methods.plus().send({
-      from: walletInstance.address,
-      gas: '200000',
-    })
-      .once('transactionHash', (txHash) => {
-        console.log(`
-          Sending a transaction... (Call contract's function 'plus')
-          txHash: ${txHash}
-          `
-        )
-      })
-      .once('receipt', (receipt) => {
-        console.log(`
-          Received receipt! It means your transaction(calling plus function)
-          is in klaytn block(#${receipt.blockNumber})
-        `, receipt)
-        this.setState({
-          settingDirection: null,
-          txHash: receipt.transactionHash,
+    try{
+      this.countContract.send({
+        from: walletInstance.address,
+        gas: '200000',
+      }, 'plus')
+        .then((receipt) => {
+          console.log(`
+            Received receipt! It means your transaction(calling plus function)
+            is in klaytn block(#${receipt.blockNumber})
+          `, receipt)
+          this.setState({
+            settingDirection: null,
+            txHash: receipt.transactionHash,
+          })
         })
-      })
-      .once('error', (error) => {
-        alert(error.message)
-        this.setState({ settingDirection: null })
-      })
+    } catch (error) {
+      alert(err.message)
+      this.setState({ settingDirection: null })
+    }
   }
 
   setMinus = () => {
@@ -109,31 +103,25 @@ class Count extends Component {
     // ex:) .once('receipt', (data) => {
     //   console.log(data)
     // })
-    this.countContract.methods.minus().send({
-      from: walletInstance.address,
-      gas: '200000',
-    })
-      .once('transactionHash', (txHash) => {
-        console.log(`
-          Sending a transaction... (Call contract's function 'minus')
-          txHash: ${txHash}
-          `
-        )
-      })
-      .once('receipt', (receipt) => {
-        console.log(`
-          Received receipt which means your transaction(calling minus function)
-          is in klaytn block(#${receipt.blockNumber})
-        `, receipt)
-        this.setState({
-          settingDirection: null,
-          txHash: receipt.transactionHash,
+    try{
+      this.countContract.send({
+        from: walletInstance.address,
+        gas: '200000',
+      }, 'minus')
+        .then((receipt) => {
+          console.log(`
+            Received receipt! It means your transaction(calling minus function)
+            is in klaytn block(#${receipt.blockNumber})
+          `, receipt)
+          this.setState({
+            settingDirection: null,
+            txHash: receipt.transactionHash,
+          })
         })
-      })
-      .once('error', (error) => {
-        alert(error.message)
-        this.setState({ settingDirection: null })
-      })
+    } catch (error) {
+      alert(err.message)
+      this.setState({ settingDirection: null })
+    }
   }
 
   componentDidMount() {
@@ -178,7 +166,7 @@ class Count extends Component {
             </p>
             <a
               target="_blank"
-              href={`https://scope.klaytn.com/transaction/${txHash}`}
+              href={`https://baobab.klaytnfinder.io/tx/${txHash}`}
               className="Count__lastTransactionLink"
             >
               {txHash}
